@@ -19,6 +19,7 @@ def mainPageSelect(XPathList,driver,action):
 	except:
 		print("You didn't solve the captcha")
 		driver.refresh()
+		exit()
 def executionSteps(XPathList,XPathBases,driver,vidURL,action,actionbutton):
 	try:
 		sleep(2)
@@ -33,7 +34,7 @@ def executionSteps(XPathList,XPathBases,driver,vidURL,action,actionbutton):
 		print(f"Delivering {increaseString} {action}")
 	except:
 		delay = getDelay(actionbutton,XPathList,XPathBases,driver)
-		print(f"Delay:{delay}\tA generic error occurred. Now will retry again")
+		print(f"Delay:{delay}\tAn error occurred when executing URL input or pressing execute button. Retrying")
 		if delay != -1:
 			sleep(delay)
 		driver.refresh()
@@ -62,7 +63,7 @@ def loop(action,actionbutton,XPathList,XPathBases,vidURLs,driver,defaultwait=360
 
 		except:
 			print("action didnt work")
-	count+=1
+		count+=1
 XPathList = {
 	# 1. main page actions after captcha page
 	"followersButton":"/html/body/div[4]/div[1]/div[3]/div/div[1]/div/button",
@@ -92,8 +93,7 @@ vidUrls = [
 	"https://www.tiktok.com/@/video/",	# Change to video URL and add more if needed
 ]
 
-bot = int(input("What do you want to do?\n1 - Auto views(500)\n2 - Auto hearts\n3 - Auto (FIRST) comments heart\n4 - Auto followers\n5 - Auto Share\n6 - Live Stream\n"))
-i = 0
+choice = int(input("What do you want to do?\n1 - Views(500)\n2 - Hearts\n3 - Comments Heart\n4 - Followers\n5 - Shares\n6 - Live Stream\n"))
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--no-sandbox')
@@ -105,17 +105,17 @@ driver = webdriver.Chrome(executable_path=r'PATH/TO/chromedriver',chrome_options
 driver.get("https://vipto.de/")
 input("Hit Enter After entering captcha\n")
 
-if bot == 1:
+if choice == 1:
     loop("Views","viewsButton",XPathList,XPathBases,vidUrls,driver)
-elif bot == 2:
+elif choice == 2:
     loop("Hearts","heartsButton",XPathList,XPathBases,vidUrls,driver)
-elif bot == 3:
+elif choice == 3:
     loop("Comment Hearts","commentsHeartsButton",XPathList,XPathBases,vidUrls,driver)
-elif bot == 4:
+elif choice == 4:
     loop("Followers","followersButton",XPathList,XPathBases,vidUrls,driver)
-elif bot == 5:
+elif choice == 5:
     loop("Shares","sharesButton",XPathList,XPathBases,vidUrls,driver)
-elif bot == 6:
+elif choice == 6:
     loop("Live Stream","livestreamButton",XPathList,XPathBases,vidUrls,driver)
 else:
-    print("You can insert just 1, 2, 3, 4, 5 or 6")
+    print("You can choose 1, 2, 3, 4, 5 or 6")

@@ -11,9 +11,16 @@ You can't use a VPN
 
 # Usage
 1) Open bt.py
-2) Paste chromedriver path in line 103 (add .exe at the end if on Windows)
+2) Paste chromedriver path in line 102 (add .exe at the end if on Windows)
+	driver = webdriver.Chrome(executable_path=r'PATH/TO/chromedriver',chrome_options=chrome_options)
+
 3) Paste TikTok video URL inside the quotes in line 92
-	3a) You can use more then one video URL at a time just copy and paste line 92 after line 92 and replace the URL in the quotes, this will devide the service between all of the videos listed	
+	>"https://www.tiktok.com/@/video/",
+
+	3a) You can use more then one video URL at a time just copy and paste line 92 after line 92 and replace the URL in the quotes, this will divide the service between all of the videos listed
+	>"https://www.tiktok.com/@/video/",
+	>"https://www.tiktok.com/@/video2/",
+
 4) Save and close
 
 # Start
