@@ -1,0 +1,35 @@
+{
+	"actions": {
+		"Views": {
+			"actionbutton": "viewsButton",
+			"loops": 0
+		},
+		"Hearts": {
+			"actionbutton": "heartsButton",
+			"loops": 0
+		},
+		"Comment Hearts": {
+			"actionbutton": "commentsHeartsButton",
+			"loops": 0
+		},
+		"Followers": {
+			"actionbutton": "followersButton",
+			"loops": 0
+		},
+		"Shares": {
+			"actionbutton": "sharesButton",
+			"loops": 0
+		},
+		"Live Stream": {
+			"actionbutton": "livestreamButton",
+			"loops": 0
+		}
+	},
+	"vidURLs": [
+		"https://www.tiktok.com/@/video/",
+		"https://www.tiktok.com/@/video/"
+	],
+	"serviceURL": "https://vipto.de/",
+	"chromePath": "D:\\PATH\\chromedriver.exe",
+	"loops": 0
+}
